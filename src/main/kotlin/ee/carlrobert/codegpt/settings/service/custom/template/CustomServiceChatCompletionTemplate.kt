@@ -115,6 +115,22 @@ enum class CustomServiceChatCompletionTemplate(
                 "max_tokens" to 8192
             )
         )
+    ),
+    DEEP_SEEK(
+        "https://api.deepseek.com/chat/completions",
+        getDefaultHeaders(
+            mapOf(
+                "Authorization" to "Bearer \$CUSTOM_SERVICE_API_KEY",
+                "HTTP-Referer" to "https://tryproxy.io",
+                "X-Title" to "ProxyAI"
+            )
+        ),
+        getDefaultBodyParams(
+            mapOf(
+                "model" to "deepseek-chat",
+                "max_tokens" to 8192
+            )
+        )
     );
 }
 

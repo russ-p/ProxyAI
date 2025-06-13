@@ -72,6 +72,12 @@ enum class CustomServiceTemplate(
         "OpenRouter",
         "https://openrouter.ai/docs#quick-start",
         CustomServiceChatCompletionTemplate.OPEN_ROUTER
+    ),
+    DEEP_SEEK(
+        "DeepSeek",
+        "https://api-docs.deepseek.com",
+        CustomServiceChatCompletionTemplate.DEEP_SEEK,
+        CustomServiceCodeCompletionTemplate.DEEP_SEEK
     );
 
     override fun toString(): String {

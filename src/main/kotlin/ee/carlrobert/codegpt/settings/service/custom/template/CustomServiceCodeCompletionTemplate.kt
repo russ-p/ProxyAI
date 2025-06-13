@@ -55,6 +55,17 @@ enum class CustomServiceCodeCompletionTemplate(
         "https://api.together.xyz/v1/completions",
         getDefaultHeaders("Authorization", "Bearer \$CUSTOM_SERVICE_API_KEY"),
         getDefaultBodyParams(mapOf("model" to "codellama/CodeLlama-70b-hf"))
+    ),
+    DEEP_SEEK(
+        "https://api.deepseek.com/beta",
+        getDefaultHeaders("Authorization", "Bearer \$CUSTOM_SERVICE_API_KEY"),
+        mutableMapOf(
+            "prompt" to "\$PREFIX",
+            "suffix" to "\$SUFFIX",
+            "model" to "deepseek-chat",
+            "temperature" to 0.7,
+            "max_tokens" to 128
+        )
     )
 }
 
